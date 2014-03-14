@@ -79,12 +79,6 @@
         });
         itemBody = null;
 
-        geoObj.events.add("click",function(e){
-            e.stopPropagation();
-            window.open(link, '_blank');
-            return false;
-        });
-
         return geoObj;
     };
 
