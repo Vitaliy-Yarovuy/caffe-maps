@@ -1,0 +1,18 @@
+#ya-map {
+  position: relative;
+  height: 500px;
+  border: 1px solid blue;
+}
+#map-form-box {
+  position: absolute;
+  z-index: 1001;
+  right: 7px;
+  top: 7px;
+  width: 220px;
+}
+#map-form-box .row {
+  margin-bottom: 5px;
+}
+#map-form-box .btn {
+  display: block;
+}

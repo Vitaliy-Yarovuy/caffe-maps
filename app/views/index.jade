@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width")
+    title= title
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    #p404
+      .container
+        h1= title
+        hr
+        br
+        #ya-map
+          #map-form-box.well.well-sm
+            h5 маршрут
+            .row
+              .col-xs-12
+                input.form-control(type="text", name="start_point", placeholder="начало маршрута", value="Киев бровары")
+            .row
+              .col-xs-12
+                input.form-control(type="text", name="end_point", placeholder="конец маршрута", value="Киев Святошин")
+            .row
+              .col-xs-6
+                a#map-path-clear.btn.btn-sm.btn-default(href="#") очистить
+              .col-xs-6
+                a#map-path-find.btn.btn-sm.btn-default(href="#") найти
+            h5 фильтр
+            .row
+              .col-xs-12
+                select.form-control(name="type_filter")
+                  option(value="-1") тип кухни
+                  option(value="1") японская кухни
+                  option(value="2") китайская кухни
+                  option(value="3") тайванская кухни
+                  option(value="3") русская кухни
+            .row
+              .col-xs-12
+                select.form-control(name="time_filter")
+                  option(value="-1") время работы
+                  option(value="1") 9:00-18:00
+                  option(value="2") 10:00-21:00
+                  option(value="3") 15:00-02:00
+                  option(value="4") 00:00-24:00
+            .row
+              .col-xs-12
+                input.form-control(type="text", name="dish_filter", placeholder="блюдо")
+            .row
+              .col-xs-6
+                a#map-filter-clear.btn.btn-sm.btn-default(href="#") очистить
+              .col-xs-6
+                a#map-filter-find.btn.btn-sm.btn-default(href="#") задать
+
+
+
+    script(src="/bower_components/jquery/dist/jquery.js")
+    script(src="/libs/easy-web-worker.js")
+    script(src="http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU&key=AE3jGFMBAAAAYYI3YAMApkKJyFXHFFFEblAJwBrvVyVwh_oAAAAAAAAAAAC_sJNqTtaRAZx2AGzSbIqCHPwPyg==")
+    script(src="/js/maps.js")
+    script(src="/js/init.js")

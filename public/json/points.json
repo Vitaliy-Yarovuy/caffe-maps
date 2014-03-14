@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1001,
+        "name": "cafe #1",
+        "address": "Vella village fry street 34 number",
+        "location": [42, 47],
+        "rating": 4.45
+    },
+]
