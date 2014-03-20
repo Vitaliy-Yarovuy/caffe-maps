@@ -70,13 +70,22 @@
                 createElement("a",{className:"btn btn-default", innerHTML: "сделать заказ", target: "_blank",href: link})
             ]);
 
-        var geoObj = new ymaps.GeoObject({
-            geometry: {type: "Point", coordinates: item.location},
-            properties: {
-                clusterCaption: item.name,
-                balloonContentBody: itemBody.outerHTML
-            }
+//        var geoObj = new ymaps.GeoObject({
+//            geometry: {type: "Point", coordinates: item.location},
+//            properties: {
+//                clusterCaption: item.name,
+//                balloonContentBody: itemBody.outerHTML
+//            }
+//        });
+        var geoObj = new ymaps.Placemark(item.location, {
+            clusterCaption: item.name,
+            balloonContentBody: itemBody.outerHTML
+        }, {
+            iconImageHref: '/img/marker.png',
+            iconImageSize: [27, 30],
+            iconImageOffset: [-13, -30]
         });
+
         itemBody = null;
 
         return geoObj;
